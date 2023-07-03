@@ -257,7 +257,8 @@ int8_t filterGetCompFuncIdx(int32_t type, int32_t optr) {
     case TSDB_DATA_TYPE_DOUBLE:
       comparFn = 5;
       break;
-    case TSDB_DATA_TYPE_BINARY: {
+    case TSDB_DATA_TYPE_BINARY:
+    case TSDB_DATA_TYPE_GEOMETRY: {
       if (optr == OP_TYPE_MATCH) {
         comparFn = 19;
       } else if (optr == OP_TYPE_NMATCH) {

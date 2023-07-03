@@ -547,16 +547,8 @@ endif(${BUILD_ADDR2LINE})
 
 # geos
 if(${BUILD_GEOS})
-    if(${TD_LINUX})
-        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS_REL}")
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_REL}")
-        IF ("${CMAKE_BUILD_TYPE}" STREQUAL "")
-            SET(CMAKE_BUILD_TYPE Release)
-        endif()
-    endif(${TD_LINUX})
     option(BUILD_SHARED_LIBS "Build GEOS with shared libraries" OFF)
     add_subdirectory(geos EXCLUDE_FROM_ALL)
-    unset(CMAKE_CXX_STANDARD CACHE) # undo libgeos's setting of global CMAKE_CXX_STANDARD
     target_include_directories(
         geos_c
         PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/geos/include>
