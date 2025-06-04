@@ -14,4 +14,3 @@ jobs:
     uses: taosdata/.github/.github/workflows/new-framework-test.yml@new-test-mac
     with:
       tdinternal: false
-      
