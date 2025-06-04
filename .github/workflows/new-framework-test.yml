@@ -1,4 +1,4 @@
-name: New Framework Test
+name: New Framework Test on macOS
 
 on:
   push:
